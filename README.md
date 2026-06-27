@@ -35,7 +35,7 @@ nestjs-backend/
 │           ├── main.ts            # 어플리케이션 진입점 및 부트스트랩
 │           ├── app.module.ts      # 글로벌 의존성 조립 모듈
 │           └── users/             # 사용자 도메인
-│               ├── dto/           # DTO 영역은 계층 분리 컨벤션 유지
+│               ├── dto/           # 레이어별 리퀘스트 리스판스 모두아는 폴더
 │               │   ├── controller/# API 입출력 경계 DTO (Request/Response)
 │               │   ├── service/   # 비즈니스 서비스용 입력 DTO (Command)
 │               │   └── repository/# 리포지토리 레이어용 데이터 바인딩 DTO (DbDto)
@@ -59,14 +59,3 @@ nestjs-backend/
     ├── static-analysis/           # ESLint 및 코드 품질 분석 자동화 스크립트
     └── monitoring/                # Terminus 헬스체크 및 Prometheus 메트릭스 모니터링 컨트롤러
 ```
-
----
-
-## 3. 아키텍처 컨벤션 및 팩트
-
-### 3-1. 계층 격리 및 DTO 흐름 규칙
-모든 도메인 작업은 외부의 물리적/논리적 변경 사항이 인접 비즈니스 코드에 전파되지 않도록 설계 단계에서 완전히 격리합니다.
-- **Request DTO** ([create-user.request.ts](file:///Users/kjg/workspace/solodev_root/learn-projects/nestjs-backend/services/example-service/src/users/dto/controller/create-user.request.ts)): 외부 HTTP 입력을 파싱하고 유효성을 1차 검사합니다.
-- **Command DTO** ([create-user.command.ts](file:///Users/kjg/workspace/solodev_root/learn-projects/nestjs-backend/services/example-service/src/users/dto/service/create-user.command.ts)): 비즈니스 서비스 레이어가 실행을 위해 제공받는 도메인 중심의 안전한 Command 명세입니다.
-- **Db DTO** ([create-user-db.dto.ts](file:///Users/kjg/workspace/solodev_root/learn-projects/nestjs-backend/services/example-service/src/users/dto/repository/create-user-db.dto.ts)): 데이터베이스 테이블에 접근할 때 ORM(Prisma) 타입에 종속되지 않도록 리포지토리 레이어만을 위해 데이터 필드를 정의한 DTO입니다.
-- **Response DTO** ([user.response.ts](file:///Users/kjg/workspace/solodev_root/learn-projects/nestjs-backend/services/example-service/src/users/dto/controller/user.response.ts)): Prisma DB 엔티티가 비즈니스 서비스 밖으로 유출되는 것을 차단하고 클라이언트에 리턴될 필드만 노출합니다.
