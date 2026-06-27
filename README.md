@@ -54,9 +54,11 @@ nestjs-backend/
 │
 └── support/                       # 4. 데이터 마이그레이션, 모니터링, 정적 분석 린트 등 시스템 및 레포지토리 지원 모듈 목록
     ├── db-migration/              # Prisma Migrate 배포 자동화 스크립트
-    ├── static-analysis/           # ESLint 및 Prettier 설정 파일과 정적분석 스크립트
+    ├── static-analysis/           # ESLint 및 Prettier 캡슐화 정적분석 모듈
+    │   ├── src/                   # 정적분석 제공 서비스 및 인터페이스
     │   ├── eslint.config.mjs      # ESLint v9 Flat Config 규칙
     │   ├── .prettierrc            # 코드 포맷터 규칙
+    │   ├── tsconfig.lib.json      # 모듈 빌드 설정
     │   └── lint.sh                # 정적분석 자동화 쉘 스크립트
     └── monitoring/                # Terminus 헬스체크 및 Prometheus 메트릭스 모니터링 컨트롤러
 ```

@@ -41,6 +41,8 @@
       "@ext/storage/*": ["external/storage/src/*"],
       "@support/monitoring": ["support/monitoring/src/index.ts"],
       "@support/monitoring/*": ["support/monitoring/src/*"],
+      "@support/static-analysis": ["support/static-analysis/src/index.ts"],
+      "@support/static-analysis/*": ["support/static-analysis/src/*"],
       "@service/example-service": ["services/example-service/src/index.ts"],
       "@service/example-service/*": ["services/example-service/src/*"]
     }
