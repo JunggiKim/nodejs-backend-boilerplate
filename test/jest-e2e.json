@@ -1,0 +1,19 @@
+{
+  "moduleFileExtensions": ["js", "json", "ts"],
+  "rootDir": ".",
+  "testEnvironment": "node",
+  "testRegex": ".e2e-spec.ts$",
+  "transform": {
+    "^.+\\.(t|j)s$": ["ts-jest", { "tsconfig": "./tsconfig.json" }]
+  },
+  "moduleNameMapper": {
+    "^@app/web-infra(|/.*)$": "<rootDir>/../libs/web-infra/src/$1",
+    "^@app/database(|/.*)$": "<rootDir>/../libs/database/src/$1",
+    "^@app/util(|/.*)$": "<rootDir>/../libs/util/src/$1",
+    "^@ext/aws(|/.*)$": "<rootDir>/../external/aws/src/$1",
+    "^@ext/cache(|/.*)$": "<rootDir>/../external/cache/src/$1",
+    "^@ext/storage(|/.*)$": "<rootDir>/../external/storage/src/$1",
+    "^@support/monitoring(|/.*)$": "<rootDir>/../support/monitoring/src/$1",
+    "^@service/example-service(|/.*)$": "<rootDir>/../services/example-service/src/$1"
+  }
+}
