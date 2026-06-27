@@ -4,7 +4,7 @@
 
 **nestjs/ts 멀티모듈기반 모노레포 보일러플레이트**
 
-본 프로젝트는 TypeScript 및 NestJS 생태계에 맞춰 포팅하고, 실무 표준 기술셋(Prisma v6, Redis, AWS S3 SDK v3, Prometheus, Terminus 헬스 체크, ESLint v9 Flat Config, SWC)을 탑재한 보일러플레이트입니다.
+본 프로젝트는 TypeScript 및 NestJS 생태계에 맞춰 포팅하고, 실무 표준 기술셋(Prisma v6, Redis, Object Storage SDK, Prometheus, Terminus 헬스 체크, ESLint v9, SWC)을 탑재한 보일러플레이트입니다.
 
 ---
 
@@ -27,7 +27,6 @@ nestjs-backend/
 ├── pnpm-workspace.yaml            # pnpm 모노레포 패키지 경로 지정
 ├── nest-cli.json                  # monorepo 빌드 타겟 및 SWC 컴파일러 플러그인 지정
 ├── tsconfig.json                  # strict 옵션이 활성화된 전체 공통 TSConfig
-├── eslint.config.mjs              # ESLint v9 Flat Config 정적분석 룰
 ├── prisma/
 │   └── schema.prisma              # 단일 소스 DB 엔티티/스키마 정의 파일
 │
@@ -55,6 +54,9 @@ nestjs-backend/
 │
 └── support/                       # 4. 데이터 마이그레이션, 모니터링, 정적 분석 린트 등 시스템 및 레포지토리 지원 모듈 목록
     ├── db-migration/              # Prisma Migrate 배포 자동화 스크립트
-    ├── static-analysis/           # ESLint 및 코드 품질 분석 자동화 스크립트
+    ├── static-analysis/           # ESLint 및 Prettier 설정 파일과 정적분석 스크립트
+    │   ├── eslint.config.mjs      # ESLint v9 Flat Config 규칙
+    │   ├── .prettierrc            # 코드 포맷터 규칙
+    │   └── lint.sh                # 정적분석 자동화 쉘 스크립트
     └── monitoring/                # Terminus 헬스체크 및 Prometheus 메트릭스 모니터링 컨트롤러
 ```
