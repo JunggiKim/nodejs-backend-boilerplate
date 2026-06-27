@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES2021",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "@app/web-infra": ["libs/web-infra/src/index.ts"],
+      "@app/web-infra/*": ["libs/web-infra/src/*"],
+      "@app/database": ["libs/database/src/index.ts"],
+      "@app/database/*": ["libs/database/src/*"],
+      "@app/util": ["libs/util/src/index.ts"],
+      "@app/util/*": ["libs/util/src/*"],
+      "@ext/aws": ["external/aws/src/index.ts"],
+      "@ext/aws/*": ["external/aws/src/*"],
+      "@ext/cache": ["external/cache/src/index.ts"],
+      "@ext/cache/*": ["external/cache/src/*"],
+      "@ext/storage": ["external/storage/src/index.ts"],
+      "@ext/storage/*": ["external/storage/src/*"],
+      "@support/monitoring": ["support/monitoring/src/index.ts"],
+      "@support/monitoring/*": ["support/monitoring/src/*"],
+      "@service/example-service": ["services/example-service/src/index.ts"],
+      "@service/example-service/*": ["services/example-service/src/*"]
+    }
+  }
+}
