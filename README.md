@@ -54,7 +54,7 @@ nestjs-backend/
 │   └── storage/                   # 오브젝트 스토리지 파일 업로드 연동 모듈
 │
 └── support/                       # 4. 데이터 마이그레이션, 모니터링, 정적 분석 린트 등 시스템 및 레포지토리 지원 모듈 목록
-    ├── db-migration/              # Prisma Migrate 배포 자동화 및 시딩 스크립트
+    ├── db-migration/              # Prisma Migrate 배포 자동화 스크립트
     ├── static-analysis/           # ESLint 및 코드 품질 분석 자동화 스크립트
     └── monitoring/                # Terminus 헬스체크 및 Prometheus 메트릭스 모니터링 컨트롤러
 ```
