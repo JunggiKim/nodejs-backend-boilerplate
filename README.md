@@ -41,17 +41,17 @@ nestjs-backend/
 │               └── users.module.ts
 │
 ├── libs/                          # 2. 비즈니스 공유 라이브러리 레이어
-│   ├── web-infra/                 # 웹 인프라 모듈
-│   └── util/                      # 공통 유틸리티 모듈
+│   ├── web-infra/                 # 웹 인프라
+│   └── util/                      # 공통 유틸리티
 │
 ├── external/                      # 3. 외부 시스템의 데이터베이스 연결, 캐시, 스토리지, 메시지큐 기능 모듈들 목록
-│   ├── database/                  # 데이터베이스 연결 모듈
-│   ├── cache/                     # 캐시 서비스 모듈
-│   ├── message-queue/             # 메시지큐 모듈
-│   └── storage/                   # 오브젝트 스토리지 모듈
+│   ├── database/                  # 데이터베이스 연결
+│   ├── cache/                     # 캐시 서비스
+│   ├── message-queue/             # 메시지큐
+│   └── storage/                   # 오브젝트 스토리지
 │
 └── support/                       # 4. 데이터베이스 마이그레이션, 모니터링, 정적 분석 린트 등 시스템 및 레포지토리 지원 모듈 목록
-    ├── db-migration/              # 데이터베이스 마이그레이션 모듈
-    ├── lint/                      # 정적분석 및 린트 모듈
-    └── monitoring/                # 모니터링 모듈
+    ├── db-migration/              # 데이터베이스 마이그레이션
+    ├── lint/                      # 정적분석 및 린트
+    └── monitoring/                # 모니터링
 ```
