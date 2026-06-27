@@ -1,6 +1,6 @@
 #!/bin/sh
-# support/static-analysis/lint.sh
-# ESLint flat config 정적 분석 자동 실행 스크립트
+# support/lint/lint.sh
+# ESLint 정적 코드 분석 자동 실행 스크립트
 
 echo "Running static code analysis (ESLint)..."
 

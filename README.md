@@ -45,7 +45,7 @@ nestjs-backend/
 ├── libs/                          # 2. 비즈니스 공유 라이브러리 레이어
 │   ├── web-infra/                 # 웹 프레임워크 표준 응답(ApiResult), 예외 필터
 │   ├── database/                  # PrismaService, PrismaModule을 포함하는 전역 DB 연결 모듈
-│   └── util/                      # DateTimeUtil 등 순수 비즈니스 공통 헬퍼 라이브러리
+│   └── util/                      # DateTimeUtil 등순수 비즈니스 공통 헬퍼 라이브러리
 │
 ├── external/                      # 3. 외부 의존성의 캐시, 스토리지 기능 모듈들 목록
 │   ├── cache/                     # Redis 캐싱 서비스 (ioredis 캡슐화 및 CacheRepository 제어)
@@ -54,8 +54,8 @@ nestjs-backend/
 │
 └── support/                       # 4. 데이터 마이그레이션, 모니터링, 정적 분석 린트 등 시스템 및 레포지토리 지원 모듈 목록
     ├── db-migration/              # Prisma Migrate 배포 자동화 스크립트
-    ├── static-analysis/           # ESLint 및 Prettier 캡슐화 정적분석 모듈
-    │   ├── src/                   # 정적분석 제공 서비스 및 인터페이스
+    ├── lint/                      # ESLint 및 Prettier 캡슐화 정적분석 모듈
+    │   ├── src/                   # 린트 제공 서비스 및 인터페이스
     │   ├── eslint.config.mjs      # ESLint v9 Flat Config 규칙
     │   ├── .prettierrc            # 코드 포맷터 규칙
     │   ├── tsconfig.lib.json      # 모듈 빌드 설정

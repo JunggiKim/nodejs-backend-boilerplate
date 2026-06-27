@@ -94,13 +94,13 @@
         "tsConfigPath": "support/monitoring/tsconfig.lib.json"
       }
     },
-    "static-analysis": {
+    "lint": {
       "type": "library",
-      "root": "support/static-analysis",
+      "root": "support/lint",
       "entryFile": "index",
-      "sourceRoot": "support/static-analysis/src",
+      "sourceRoot": "support/lint/src",
       "compilerOptions": {
-        "tsConfigPath": "support/static-analysis/tsconfig.lib.json"
+        "tsConfigPath": "support/lint/tsconfig.lib.json"
       }
     }
   }
