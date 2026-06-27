@@ -20,7 +20,7 @@
     "strictPropertyInitialization": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
     "plugins": [
       {
         "transform": "@nestia/core/lib/transform"
@@ -44,5 +44,12 @@
       "@service/example-service": ["services/example-service/src/index.ts"],
       "@service/example-service/*": ["services/example-service/src/*"]
     }
-  }
+  },
+  "include": [
+    "services/**/*",
+    "libs/**/*",
+    "external/**/*",
+    "support/**/*",
+    "test/**/*"
+  ]
 }

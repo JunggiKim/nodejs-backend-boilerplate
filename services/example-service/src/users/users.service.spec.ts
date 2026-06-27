@@ -1,4 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
+import { vi } from 'vitest';
 import { ErrConflict, ErrNotFound } from '@app/web-infra';
 import { UsersService } from './users.service';
 import { UsersRepository } from './users.repository';
@@ -16,18 +17,18 @@ const buildMockUser = (overrides?: Partial<{ id: number; email: string; name: st
 });
 
 const mockUsersRepository = {
-  create: jest.fn(),
-  findById: jest.fn(),
-  findByEmail: jest.fn(),
-  update: jest.fn(),
-  softDelete: jest.fn(),
+  create: vi.fn(),
+  findById: vi.fn(),
+  findByEmail: vi.fn(),
+  update: vi.fn(),
+  softDelete: vi.fn(),
 };
 
 describe('UsersService', () => {
   let service: UsersService;
 
   beforeEach(async () => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
 
     const module: TestingModule = await Test.createTestingModule({
       providers: [

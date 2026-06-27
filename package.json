@@ -10,10 +10,10 @@
     "build": "nest build example-service",
     "lint": "eslint --config support/lint/eslint.config.mjs .",
     "format": "prettier --config support/lint/.prettierrc --write \"**/*.ts\"",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:cov": "jest --coverage",
-    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:cov": "vitest run --coverage",
+    "test:e2e": "vitest run --config vitest.config.ts test/users.e2e-spec.ts",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
     "prisma:deploy": "prisma migrate deploy",
@@ -75,9 +75,12 @@
     "ts-patch": "^3.3.0",
     "tsx": "^4.19.4",
     "typescript": "^5.8.3",
-    "typescript-eslint": "^8.32.1"
+    "typescript-eslint": "^8.32.1",
+    "vite-tsconfig-paths": "^6.1.1",
+    "vitest": "^4.1.9",
+    "vitest-mock-extended": "^4.0.0"
   },
   "prisma": {
-    "schema": "libs/database/prisma/schema.prisma"
+    "schema": "libs/database/prisma"
   }
 }

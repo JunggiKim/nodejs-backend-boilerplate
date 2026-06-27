@@ -1,4 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
+import { vi } from 'vitest';
 import { ErrNotFound } from '@app/web-infra';
 import { UsersController } from './users.controller';
 import { UsersService } from './users.service';
@@ -16,17 +17,17 @@ const buildMockUserResponse = (overrides?: Partial<UserResponse>): UserResponse 
 });
 
 const mockUsersService = {
-  create: jest.fn(),
-  findOne: jest.fn(),
-  update: jest.fn(),
-  remove: jest.fn(),
+  create: vi.fn(),
+  findOne: vi.fn(),
+  update: vi.fn(),
+  remove: vi.fn(),
 };
 
 describe('UsersController', () => {
   let controller: UsersController;
 
   beforeEach(async () => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
 
     const module: TestingModule = await Test.createTestingModule({
       controllers: [UsersController],
