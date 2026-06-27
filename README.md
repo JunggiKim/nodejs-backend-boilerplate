@@ -10,10 +10,10 @@
 
 - **목적**: NestJS 표준 패턴의 모노레포 아키텍처 학습 및 실무 보일러플레이트.
 - **특징**:
-  - `services/` 하위의 독립 실행 서비스 아키텍처.
-  - `libs/` 하위의 비즈니스 웹 공통 및 DB 라이브러리 격리.
-  - `external/` 하위의 외부 의존(Redis, AWS S3) 라이브러리 차단 및 추상 클래스/인터페이스 주입.
-  - `support/` 하위의 운영 및 품질 도구(마이그레이션, 모니터링, 린터) 모듈화.
+  - `services/`: 하위의 독립 실행가능한 애플리케이션 목록들.
+  - `libs/`: 공통 웹 인프라 및 전역 데이터베이스 접근 공유 모듈 목록.
+  - `external/`: 외부 의존성의 캐시, 스토리지 기능 모듈들 목록.
+  - `support/`: 데이터 마이그레이션, 모니터링, 정적 분석 린트 등 시스템 및 레포지토리 지원 모듈 목록.
 
 ---
 
@@ -29,7 +29,7 @@ nestjs-backend/
 ├── prisma/
 │   └── schema.prisma              # 단일 소스 DB 엔티티/스키마 정의 파일
 │
-├── services/                      # 1. 하위의 독립실행가능한 애플리케이션
+├── services/                      # 1. 하위의 독립 실행가능한 애플리케이션 목록들
 │   └── example-service/           # 회원 및 핵심 API 제공용 실행 모듈
 │       └── src/
 │           ├── main.ts            # 어플리케이션 진입점 및 부트스트랩
@@ -49,12 +49,12 @@ nestjs-backend/
 │   ├── database/                  # PrismaService, PrismaModule을 포함하는 전역 DB 연결 모듈
 │   └── util/                      # DateTimeUtil 등 순수 비즈니스 공통 헬퍼 라이브러리
 │
-├── external/                      # 3. 외부 타사 서비스 격리 레이어 (타사 의존 전파 차단)
+├── external/                      # 3. 외부 의존성의 캐시, 스토리지 기능 모듈들 목록
 │   ├── aws/                       # AWS 공통 인프라
 │   ├── cache/                     # Redis 캐싱 서비스 (ioredis 캡슐화 및 CacheRepository 제어)
 │   └── storage/                   # AWS S3 파일 스토리지 업로드 격리 모듈
 │
-└── support/                       # 4. 운영 지원 및 시스템 도구 레이어
+└── support/                       # 4. 데이터 마이그레이션, 모니터링, 정적 분석 린트 등 시스템 및 레포지토리 지원 모듈 목록
     ├── db-migration/              # Prisma Migrate 배포 자동화 및 시딩 스크립트
     ├── static-analysis/           # ESLint 및 코드 품질 분석 자동화 스크립트
     └── monitoring/                # Terminus 헬스체크 및 Prometheus 메트릭스 모니터링 컨트롤러
