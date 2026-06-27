@@ -14,7 +14,7 @@
 - **특징**:
   - `services/`: 하위의 독립 실행가능한 애플리케이션 목록들.
   - `libs/`: 공통 웹 인프라 및 전역 데이터베이스 접근 공유 모듈 목록.
-  - `external/`: 외부 의존성의 cache, storage, message-queue 기능 모듈들 목록.
+  - `external/`: 외부 시스템의 캐시, 스토리지, 메시지큐 기능 모듈들 목록.
   - `support/`: 데이터 마이그레이션, 모니터링, 정적 분석 린트 등 시스템 및 레포지토리 지원 모듈 목록.
 
 ---
@@ -27,8 +27,6 @@ nestjs-backend/
 ├── pnpm-workspace.yaml            # pnpm 모노레포 패키지 경로 지정
 ├── nest-cli.json                  # monorepo 빌드 타겟 및 SWC 컴파일러 플러그인 지정
 ├── tsconfig.json                  # strict 옵션이 활성화된 전체 공통 TSConfig
-├── prisma/
-│   └── schema.prisma              # 단일 소스 DB 엔티티/스키마 정의 파일
 │
 ├── services/                      # 1. 하위의 독립 실행가능한 애플리케이션 목록들
 │   └── example-service/           # 회원 및 핵심 API 제공용 실행 모듈
@@ -44,17 +42,22 @@ nestjs-backend/
 │
 ├── libs/                          # 2. 비즈니스 공유 라이브러리 레이어
 │   ├── web-infra/                 # 웹 프레임워크 표준 응답(ApiResult), 예외 필터
-│   ├── database/                  # PrismaService, PrismaModule을 포함하는 전역 DB 연결 모듈
+│   ├── database/                  # 전역 데이터베이스 연결 모듈
+│   │   ├── prisma/
+│   │   │   └── schema.prisma      # 단일 소스 데이터베이스 스키마
+│   │   └── src/
+│   │       ├── prisma.service.ts  # 데이터베이스 생명주기 제어 및 연결
+│   │       └── prisma.module.ts
 │   └── util/                      # DateTimeUtil 등 순수 비즈니스 공통 헬퍼 라이브러리
 │
-├── external/                      # 3. 외부 의존성의 캐시, 스토리지, 메시지큐 기능 모듈들 목록
-│   ├── cache/                     # Redis 캐싱 서비스 (ioredis 캡슐화 및 CacheRepository 제어)
-│   ├── message-queue/             # 이벤트 메시지 전송 및 발행/구독 연동 모듈
-│   └── storage/                   # 오브젝트 스토리지 파일 업로드 연동 모듈
+├── external/                      # 3. 외부 시스템의 캐시, 스토리지, 메시지큐 기능 모듈들 목록
+│   ├── cache/                     # 캐시 서비스 모듈
+│   ├── message-queue/             # 이벤트 메시지 전송 및 발행/구독 모듈
+│   └── storage/                   # 오브젝트 스토리지 파일 업로드 모듈
 │
 └── support/                       # 4. 데이터 마이그레이션, 모니터링, 정적 분석 린트 등 시스템 및 레포지토리 지원 모듈 목록
     ├── db-migration/              # Prisma Migrate 배포 자동화 스크립트
-    ├── lint/                      # ESLint 및 Prettier 캡슐화 정적분석 모듈
+    ├── lint/                      # ESLint 및 Prettier 정적분석 모듈
     │   ├── eslint.config.mjs      # ESLint v9 Flat Config 규칙
     │   ├── .prettierrc            # 코드 포맷터 규칙
     │   └── lint.sh                # 정적분석 자동화 쉘 스크립트
