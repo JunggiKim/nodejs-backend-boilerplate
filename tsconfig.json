@@ -41,8 +41,6 @@
       "@ext/storage/*": ["external/storage/src/*"],
       "@support/monitoring": ["support/monitoring/src/index.ts"],
       "@support/monitoring/*": ["support/monitoring/src/*"],
-      "@support/lint": ["support/lint/src/index.ts"],
-      "@support/lint/*": ["support/lint/src/*"],
       "@service/example-service": ["services/example-service/src/index.ts"],
       "@service/example-service/*": ["services/example-service/src/*"]
     }

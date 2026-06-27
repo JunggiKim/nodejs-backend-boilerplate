@@ -93,15 +93,6 @@
       "compilerOptions": {
         "tsConfigPath": "support/monitoring/tsconfig.lib.json"
       }
-    },
-    "lint": {
-      "type": "library",
-      "root": "support/lint",
-      "entryFile": "index",
-      "sourceRoot": "support/lint/src",
-      "compilerOptions": {
-        "tsConfigPath": "support/lint/tsconfig.lib.json"
-      }
     }
   }
 }
