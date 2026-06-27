@@ -1,5 +1,7 @@
 # NestJS Backend Monorepo Boilerplate
 
+**A NestJS & TypeScript multi-module backend monorepo boilerplate.**
+
 **nestjs/ts 멀티모듈기반 모노레포 보일러플레이트**
 
 본 프로젝트는 TypeScript 및 NestJS 생태계에 맞춰 포팅하고, 실무 표준 기술셋(Prisma v6, Redis, AWS S3 SDK v3, Prometheus, Terminus 헬스 체크, ESLint v9 Flat Config, SWC)을 탑재한 완성형 보일러플레이트입니다.
