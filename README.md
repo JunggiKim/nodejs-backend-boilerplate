@@ -15,7 +15,7 @@
   - `services/`: 하위의 독립 실행가능한 애플리케이션 목록들.
   - `libs/`: 공통 웹 인프라 공유 모듈 목록.
   - `external/`: 외부 시스템의 데이터베이스 연결, 캐시, 스토리지, 메시지큐 기능 모듈들 목록.
-  - `support/`: 데이터 마이그레이션, 모니터링, 정적 분석 린트 등 시스템 및 레포지토리 지원 모듈 목록.
+  - `support/`: 데이터베이스 마이그레이션, 모니터링, 정적 분석 린트 등 시스템 및 레포지토리 지원 모듈 목록.
 
 ---
 
@@ -41,26 +41,17 @@ nestjs-backend/
 │               └── users.module.ts
 │
 ├── libs/                          # 2. 비즈니스 공유 라이브러리 레이어
-│   ├── web-infra/                 # 웹 프레임워크 표준 응답(ApiResult), 예외 필터
-│   └── util/                      # DateTimeUtil 등 순수 비즈니스 공통 헬퍼 라이브러리
+│   ├── web-infra/                 # 웹 인프라 모듈
+│   └── util/                      # 공통 유틸리티 모듈
 │
 ├── external/                      # 3. 외부 시스템의 데이터베이스 연결, 캐시, 스토리지, 메시지큐 기능 모듈들 목록
-│   ├── database/                  # 전역 데이터베이스 연결 모듈
-│   │   ├── prisma/
-│   │   │   ├── schema.prisma      # 단일 소스 데이터베이스 스키마
-│   │   │   └── user.prisma        # 사용자 정보 스키마
-│   │   └── src/
-│   │       ├── prisma.service.ts  # 데이터베이스 생명주기 제어 및 연결
-│   │       └── prisma.module.ts
+│   ├── database/                  # 데이터베이스 연결 모듈
 │   ├── cache/                     # 캐시 서비스 모듈
-│   ├── message-queue/             # 이벤트 메시지 전송 및 발행/구독 모듈
-│   └── storage/                   # 오브젝트 스토리지 파일 업로드 모듈
+│   ├── message-queue/             # 메시지큐 모듈
+│   └── storage/                   # 오브젝트 스토리지 모듈
 │
-└── support/                       # 4. 데이터 마이그레이션, 모니터링, 정적 분석 린트 등 시스템 및 레포지토리 지원 모듈 목록
-    ├── db-migration/              # Prisma Migrate 배포 자동화 스크립트
-    ├── lint/                      # ESLint 및 Prettier 정적분석 모듈
-    │   ├── eslint.config.mjs      # ESLint v9 Flat Config 규칙
-    │   ├── .prettierrc            # 코드 포맷터 규칙
-    │   └── lint.sh                # 정적분석 자동화 쉘 스크립트
-    └── monitoring/                # Terminus 헬스체크 및 Prometheus 메트릭스 모니터링 컨트롤러
+└── support/                       # 4. 데이터베이스 마이그레이션, 모니터링, 정적 분석 린트 등 시스템 및 레포지토리 지원 모듈 목록
+    ├── db-migration/              # 데이터베이스 마이그레이션 모듈
+    ├── lint/                      # 정적분석 모듈
+    └── monitoring/                # 모니터링 모듈
 ```
