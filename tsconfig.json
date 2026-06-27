@@ -21,6 +21,11 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true,
+    "plugins": [
+      {
+        "transform": "@nestia/core/lib/transform"
+      }
+    ],
     "paths": {
       "@app/web-infra": ["libs/web-infra/src/index.ts"],
       "@app/web-infra/*": ["libs/web-infra/src/*"],
