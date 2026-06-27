@@ -58,15 +58,6 @@
         "tsConfigPath": "libs/database/tsconfig.lib.json"
       }
     },
-    "aws": {
-      "type": "library",
-      "root": "external/aws",
-      "entryFile": "index",
-      "sourceRoot": "external/aws/src",
-      "compilerOptions": {
-        "tsConfigPath": "external/aws/tsconfig.lib.json"
-      }
-    },
     "cache": {
       "type": "library",
       "root": "external/cache",
@@ -74,6 +65,15 @@
       "sourceRoot": "external/cache/src",
       "compilerOptions": {
         "tsConfigPath": "external/cache/tsconfig.lib.json"
+      }
+    },
+    "message-queue": {
+      "type": "library",
+      "root": "external/message-queue",
+      "entryFile": "index",
+      "sourceRoot": "external/message-queue/src",
+      "compilerOptions": {
+        "tsConfigPath": "external/message-queue/tsconfig.lib.json"
       }
     },
     "storage": {

@@ -34,7 +34,7 @@ nestjs-backend/
 │       └── src/
 │           ├── main.ts            # 어플리케이션 진입점 및 부트스트랩
 │           ├── app.module.ts      # 글로벌 의존성 조립 모듈
-│           └── users/             # 사용자 도메인 (구현 단순화를 위해 플랫 구조화)
+│           └── users/             # 사용자 도메인
 │               ├── dto/           # DTO 영역은 계층 분리 컨벤션 유지
 │               │   ├── controller/# API 입출력 경계 DTO (Request/Response)
 │               │   ├── service/   # 비즈니스 서비스용 입력 DTO (Command)
@@ -50,9 +50,9 @@ nestjs-backend/
 │   └── util/                      # DateTimeUtil 등 순수 비즈니스 공통 헬퍼 라이브러리
 │
 ├── external/                      # 3. 외부 의존성의 캐시, 스토리지 기능 모듈들 목록
-│   ├── aws/                       # AWS 공통 인프라
 │   ├── cache/                     # Redis 캐싱 서비스 (ioredis 캡슐화 및 CacheRepository 제어)
-│   └── storage/                   # AWS S3 파일 스토리지 업로드 격리 모듈
+│   ├── message-queue/             # 이벤트 메시지 전송 및 발행/구독 연동 모듈
+│   └── storage/                   # 오브젝트 스토리지 파일 업로드 연동 모듈
 │
 └── support/                       # 4. 데이터 마이그레이션, 모니터링, 정적 분석 린트 등 시스템 및 레포지토리 지원 모듈 목록
     ├── db-migration/              # Prisma Migrate 배포 자동화 및 시딩 스크립트
