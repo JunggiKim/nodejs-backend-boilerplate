@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { LoggerModule } from 'nestjs-pino';
-import { PrismaModule } from '@app/database';
+import { PrismaModule } from '@ext/database';
 import { validationSchema } from '@app/web-infra';
 import { UsersModule } from './users/users.module';
 import { MonitoringModule } from '@support/monitoring';

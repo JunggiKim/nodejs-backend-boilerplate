@@ -3,7 +3,7 @@ import { INestApplication, ValidationPipe } from '@nestjs/common';
 import * as request from 'supertest';
 import { AppModule } from '../services/example-service/src/app.module';
 import { HttpExceptionFilter, ResponseInterceptor } from '../libs/web-infra/src';
-import { PrismaService } from '../libs/database/src';
+import { PrismaService } from '../external/database/src';
 
 describe('Users (e2e)', () => {
   let app: INestApplication;

@@ -51,11 +51,11 @@
     },
     "database": {
       "type": "library",
-      "root": "libs/database",
+      "root": "external/database",
       "entryFile": "index",
-      "sourceRoot": "libs/database/src",
+      "sourceRoot": "external/database/src",
       "compilerOptions": {
-        "tsConfigPath": "libs/database/tsconfig.lib.json"
+        "tsConfigPath": "external/database/tsconfig.lib.json"
       }
     },
     "cache": {

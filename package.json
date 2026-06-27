@@ -81,6 +81,6 @@
     "vitest-mock-extended": "^4.0.0"
   },
   "prisma": {
-    "schema": "libs/database/prisma"
+    "schema": "external/database/prisma"
   }
 }

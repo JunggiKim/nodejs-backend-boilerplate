@@ -29,8 +29,8 @@
     "paths": {
       "@app/web-infra": ["libs/web-infra/src/index.ts"],
       "@app/web-infra/*": ["libs/web-infra/src/*"],
-      "@app/database": ["libs/database/src/index.ts"],
-      "@app/database/*": ["libs/database/src/*"],
+      "@ext/database": ["external/database/src/index.ts"],
+      "@ext/database/*": ["external/database/src/*"],
       "@app/util": ["libs/util/src/index.ts"],
       "@app/util/*": ["libs/util/src/*"],
       "@ext/cache": ["external/cache/src/index.ts"],
